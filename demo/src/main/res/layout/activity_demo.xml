@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1B1E1E"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#1f5797"
+        android:padding="3dp"
+        android:text="2020年7月20日"
+        android:textColor="@android:color/white"
+        android:textSize="12dp" />
+
+    <com.xuqiqiang.scalebox.ScaleBox
+        android:id="@+id/scale_box"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

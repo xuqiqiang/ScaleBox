@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RoundProgressBar">
+        <attr name="rpb_roundColor" format="color" />
+        <attr name="rpb_roundProgressColor" format="color" />
+        <attr name="rpb_roundWidth" format="dimension" />
+        <attr name="rpb_textColor" format="color" />
+        <attr name="rpb_textSize" format="dimension" />
+        <attr name="rpb_max" format="integer" />
+        <attr name="rpb_textIsDisplayable" format="boolean" />
+        <attr name="rpb_style">
+            <enum name="STROKE" value="0" />
+            <enum name="FILL" value="1" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="StatusBarHeightView">
+        <attr name="use_type" format="integer">
+            <enum name="use_height" value="0" />
+            <enum name="use_padding_top" value="1" />
+        </attr>
+    </declare-styleable>
+</resources>

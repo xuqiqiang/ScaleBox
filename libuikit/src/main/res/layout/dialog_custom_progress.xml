@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="@android:color/black">
+
+    <LinearLayout
+        android:id="@+id/ll_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/custom_progress_dialog_bg"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingStart="32dp"
+        android:paddingTop="20dp"
+        android:paddingEnd="32dp"
+        android:paddingBottom="20dp">
+
+        <ProgressBar
+            android:id="@+id/pb_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateDrawable="@drawable/progressbar" />
+
+        <com.xuqiqiang.uikit.view.RoundProgressBar
+            android:id="@+id/rpb_loading"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:visibility="gone"
+            app:rpb_max="100"
+            app:rpb_roundColor="@android:color/white"
+            app:rpb_roundProgressColor="?attr/colorPrimary"
+            app:rpb_roundWidth="2dp"
+            app:rpb_textColor="@android:color/white"
+            app:rpb_textSize="12sp"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="?android:attr/textColorPrimary"
+            android:visibility="gone"
+            tools:text="加载中..."
+            tools:visibility="visible" />
+    </LinearLayout>
+</FrameLayout>

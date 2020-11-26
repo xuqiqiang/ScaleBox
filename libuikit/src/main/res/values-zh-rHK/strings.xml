@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ================ 常用 ================ -->
+    <string name="input_empty">輸入為空</string>
+    <string name="retry">重試</string>
+    <string name="unknown">未知</string>
+    <string name="not_install_app">沒有安裝指定的應用</string>
+    <string name="loading">正在加載…</string>
+    <string name="waiting">請稍等…</string>
+    <string name="about">關於</string>
+    <string name="share">分享</string>
+    <string name="score">評分</string>
+    <string name="prompt">提示</string>
+    <string name="network_error">網絡連接錯誤</string>
+    <string name="network_disabled">網絡不可用</string>
+    <string name="prompt_os_version_low">您的系統版本過低</string>
+    <string name="unknown_error">未知錯誤</string>
+    <string name="input_error">輸入有誤</string>
+    <string name="prompt_api_low">您的系統版本太低，無法使用此功能</string>
+
+    <string name="feedback">反饋</string>
+    <string name="collect">收藏</string>
+    <string name="history">歷史</string>
+    <string name="settings">設置</string>
+    <string name="update">更新</string>
+    <string name="info">說明</string>
+    <string name="find">發現</string>
+    <string name="new_edition">發現新版本</string>
+    <string name="updating">正在下載新版本…</string>
+    <string name="translate">翻譯</string>
+    <string name="speak">朗讀</string>
+    <string name="report">記下</string>
+    <string name="detail">詳細</string>
+    <string name="ocr">圖像識別</string>
+
+
+    <string name="check_updating">正在檢查更新…</string>
+    <string name="download_no_appstore">未安裝應用市場</string>
+    <string name="network_disconnect_prompt">網絡異常</string>
+    <!-- ================ 對話框 ================ -->
+    <string name="option">選項</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
+    <string name="ok">確定</string>
+    <string name="cancel">取消</string>
+    <string name="back">返回</string>
+    <string name="other">其他</string>
+    <string name="send">發送</string>
+
+    <!-- ================ 設置 ================ -->
+
+    <string name="help_set_theme">主題風格</string>
+    <string name="help_set_prompt_theme_refresh">是否立即生效?</string>
+    <string name="help_set_software">軟件設置</string>
+    <string name="help_set_feedback">反饋</string>
+    <string name="help_set_score">評分</string>
+    <string name="help_set_about">關於</string>
+    <string name="help_set_updata">更新</string>
+    <string name="help_set_share">分享</string>
+    <string name="help_set_find">發現</string>
+    <string name="help_set_help_to_improve">參與用戶體驗改進計劃</string>
+    <string name="help_set_filter">過濾敏感內容</string>
+</resources>

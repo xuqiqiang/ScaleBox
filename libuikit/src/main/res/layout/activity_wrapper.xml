@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.xuqiqiang.uikit.view.StatusBarHeightView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/status_bar_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorPrimaryDark"
+    app:use_type="use_padding_top">
+
+    <FrameLayout
+        android:id="@+id/activity_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?android:attr/windowBackground" />
+</com.xuqiqiang.uikit.view.StatusBarHeightView>

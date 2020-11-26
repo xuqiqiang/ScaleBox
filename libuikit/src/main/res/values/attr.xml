@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TouchOpacity">
+        <attr name="opacity" format="integer" />
+        <attr name="enabled" format="boolean" />
+        <attr name="security_time" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="TouchRipple">
+        <attr name="mrl_rippleColor" format="color" localization="suggested" />
+        <attr name="mrl_rippleDimension" format="dimension" localization="suggested" />
+        <attr name="mrl_rippleOverlay" format="boolean" localization="suggested" />
+        <attr name="mrl_rippleAlpha" format="float" localization="suggested" />
+        <attr name="mrl_rippleDuration" format="integer" localization="suggested" />
+        <attr name="mrl_rippleFadeDuration" format="integer" localization="suggested" />
+        <attr name="mrl_rippleHover" format="boolean" localization="suggested" />
+        <attr name="mrl_rippleBackground" format="color" localization="suggested" />
+        <attr name="mrl_rippleDelayClick" format="boolean" localization="suggested" />
+        <attr name="mrl_ripplePersistent" format="boolean" localization="suggested" />
+        <attr name="mrl_rippleInAdapter" format="boolean" localization="suggested" />
+        <attr name="mrl_rippleRoundedCorners" format="dimension" localization="suggested" />
+        <attr name="mrl_rippleRoundedCornersTopLeft" format="dimension" />
+        <attr name="mrl_rippleRoundedCornersTopRight" format="dimension" />
+        <attr name="mrl_rippleRoundedCornersBottomLeft" format="dimension" />
+        <attr name="mrl_rippleRoundedCornersBottomRight" format="dimension" />
+        <attr name="ripple_time" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="StatusBarHeightView">
+        <attr name="use_type" format="integer">
+            <enum name="use_height" value="0" />
+            <enum name="use_padding_top" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="ScaleImageView">
+        <attr name="siv_scaleType" format="integer">
+            <enum name="centerBottomCrop" value="0" />
+            <enum name="centerTopCrop" value="1" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="SignKeyWordTextView">
+        <attr name="signText" format="string" />
+        <attr name="signTextColor" format="color" />
+    </declare-styleable>
+    <declare-styleable name="RoundProgressBar">
+        <attr name="rpb_roundColor" format="color" />
+        <attr name="rpb_roundProgressColor" format="color" />
+        <attr name="rpb_roundWidth" format="dimension" />
+        <attr name="rpb_textColor" format="color" />
+        <attr name="rpb_textSize" format="dimension" />
+        <attr name="rpb_max" format="integer" />
+        <attr name="rpb_textIsDisplayable" format="boolean" />
+        <attr name="rpb_style">
+            <enum name="STROKE" value="0" />
+            <enum name="FILL" value="1" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="MaxHeightView">
+        <attr name="mhv_HeightRatio" format="reference|float" />
+        <attr name="mhv_HeightDimen" format="reference|dimension" />
+    </declare-styleable>
+    <declare-styleable name="PagerIndicator">
+        <attr name="pi_dot_dark" format="reference" />
+        <attr name="pi_dot_light" format="reference" />
+        <attr name="pi_dot_margin" format="reference|dimension" />
+    </declare-styleable>
+
+    <!--    <attr name="colorMain" format="color" />-->
+    <!--    <attr name="colorDark" format="color" />-->
+    <!-- 自定义Toast的背景颜色 -->
+    <attr name="colorToast" format="color" />
+    <!-- 不可用的控件背景颜色 -->
+    <attr name="colorDisabled" format="color" />
+    <!--    <attr name="colorTextLight" format="color" />-->
+    <!--    <attr name="colorTitle" format="color" />-->
+    <!--    <attr name="colorTitleText" format="color" />-->
+    <!--    <attr name="colorTitleRipple" format="color" />-->
+    <!-- 分割线颜色 -->
+    <attr name="colorDivider" format="color" />
+    <!--    <attr name="colorRipple" format="color" />-->
+    <!--    <attr name="colorRippleDark" format="color" />-->
+    <!--    <attr name="statusBarPaddingTop" format="boolean" />-->
+    <!-- 与android:windowLightStatusBar相反，改变状态栏文字颜色，true白色，false黑色 -->
+    <attr name="statusBarDark" format="boolean" />
+    <!-- 与android:fitsSystemWindows相反，沉浸式状态栏 -->
+    <attr name="statusBarImmersion" format="boolean" />
+
+    <!-- 背景颜色 -->
+    <attr name="colorBG" format="color" />
+    <!-- 主色调 -->
+    <attr name="colorPM" format="color" />
+
+    <!-- 默认返回图标 -->
+    <attr name="icBack" format="reference" />
+    <!-- 默认菜单图标 -->
+    <attr name="icMenu" format="reference" />
+</resources>

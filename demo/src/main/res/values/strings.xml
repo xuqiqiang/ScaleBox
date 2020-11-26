@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ScaleBoxDemo</string>
+    <string name="general_all_pictures">所有图片</string>
+    <string name="open_gallery_error">找不到打开 图片/视频 的应用</string>
+    <string name="drawer_open">drawer_open</string>
+    <string name="drawer_close">drawer_close</string>
+<!--    <string name="bracket_num">(%1$d)</string>-->
+    <string name="bracket_num">%1$d张</string>
+</resources>

@@ -1,0 +1,63 @@
+<resources>
+    <!-- ================ 常用 ================ -->
+    <string name="open_gallery_error">Can not found app to open image/video</string>
+    <string name="input_empty">Enter null</string>
+    <string name="retry">Retry</string>
+    <string name="unknown">Unknown</string>
+    <string name="not_install_app">The specified application is not installed</string>
+    <string name="loading">Loading …</string>
+    <string name="waiting">Just a moment please …</string>
+    <string name="about">About</string>
+    <string name="share">Share</string>
+    <string name="score">Score</string>
+    <string name="prompt">Tips</string>
+    <string name="network_error">Network connection error</string>
+    <string name="network_disabled">Network unavailable</string>
+    <string name="prompt_os_version_low">Version on your system is too low</string>
+    <string name="unknown_error">Unknown error</string>
+    <string name="input_error">Input error</string>
+    <string name="prompt_api_low">Version on your system is too low, this feature is not available</string>
+
+    <string name="feedback">feedback</string>
+    <string name="collect">favorite</string>
+    <string name="history">history</string>
+    <string name="settings">settings</string>
+    <string name="update">update</string>
+    <string name="info">Information</string>
+    <string name="find">found</string>
+
+    <string name="new_edition">found new version</string>
+    <string name="updating">downloading new version …</string>
+    <string name="translate">translate</string>
+    <string name="speak">speak</string>
+    <string name="report">note</string>
+    <string name="detail">detail</string>
+    <string name="ocr">image recognition</string>
+    <string name="check_updating">checking for updates …</string>
+    <string name="download_no_appstore">app market is not installed</string>
+    <string name="network_disconnect_prompt">network anomaly</string>
+    <!-- ================ 对话框 ================ -->
+
+    <string name="option">Options</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="back">Return</string>
+    <string name="other">Other</string>
+    <string name="send">Send</string>
+
+    <!-- ================ Settings ================ -->
+
+    <string name="help_set_theme">theme style</string>
+    <string name="help_set_prompt_theme_refresh">Effective immediately?</string>
+    <string name="help_set_software">software settings</string>
+    <string name="help_set_feedback">Feedback</string>
+    <string name="help_set_score">score</string>
+    <string name="help_set_about">about</string>
+    <string name="help_set_updata">Update</string>
+    <string name="help_set_share">share</string>
+    <string name="help_set_find">found</string>
+    <string name="help_set_help_to_improve">Participate in user experience improvement program</string>
+    <string name="help_set_filter">Filtering sensitive content</string>
+</resources>

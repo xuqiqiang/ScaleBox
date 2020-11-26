@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ================ 常用 ================ -->
+    <string name="open_gallery_error">找不到打开 图片/视频 的应用</string>
+    <string name="input_empty">输入为空</string>
+    <string name="retry">重试</string>
+    <string name="unknown">未知</string>
+    <string name="not_install_app">没有安装指定的应用</string>
+    <string name="loading">正在加载…</string>
+    <string name="waiting">请稍等…</string>
+    <string name="about">关于</string>
+    <string name="share">分享</string>
+    <string name="score">评分</string>
+    <string name="prompt">提示</string>
+    <string name="network_error">网络连接错误</string>
+    <string name="network_disabled">网络不可用</string>
+    <string name="prompt_os_version_low">您的系统版本过低</string>
+    <string name="unknown_error">未知错误</string>
+    <string name="input_error">输入有误</string>
+    <string name="prompt_api_low">您的系统版本太低，无法使用此功能</string>
+
+    <string name="feedback">反馈</string>
+    <string name="collect">收藏</string>
+
+    <string name="history">历史</string>
+    <string name="settings">设置</string>
+    <string name="update">更新</string>
+    <string name="info">说明</string>
+    <string name="find">发现</string>
+
+    <string name="new_edition">发现新版本</string>
+    <string name="updating">正在下载新版本…</string>
+    <string name="translate">翻译</string>
+    <string name="speak">朗读</string>
+    <string name="report">记下</string>
+    <string name="detail">详细</string>
+    <string name="ocr">图像识别</string>
+
+    <string name="check_updating">正在检查更新…</string>
+    <string name="download_no_appstore">未安装应用市场</string>
+    <string name="network_disconnect_prompt">网络异常</string>
+
+    <!-- ================ 对话框 ================ -->
+    <string name="option">选项</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+    <string name="back">返回</string>
+    <string name="other">其他</string>
+    <string name="send">发送</string>
+
+    <!-- ================ 设置 ================ -->
+    <string name="help_set_theme">主题风格</string>
+    <string name="help_set_prompt_theme_refresh">是否立即生效?</string>
+    <string name="help_set_software">软件设置</string>
+    <string name="help_set_feedback">反馈</string>
+    <string name="help_set_score">评分</string>
+    <string name="help_set_about">关于</string>
+    <string name="help_set_updata">更新</string>
+    <string name="help_set_share">分享</string>
+    <string name="help_set_find">发现</string>
+    <string name="help_set_help_to_improve">参与用户体验改进计划</string>
+    <string name="help_set_filter">内容过滤</string>
+</resources>

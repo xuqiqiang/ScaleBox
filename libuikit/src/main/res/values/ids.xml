@@ -1,0 +1,4 @@
+<resources>
+    <item name="tag_anim_show" type="id" />
+    <item name="tag_anim_alpha" type="id" />
+</resources>

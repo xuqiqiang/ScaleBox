@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <external-path
+        name="files_root"
+        path="Android/data/com.xuqiqiang.scalebox.demo/" />
+    <external-path
+        name="external_storage_root"
+        path="." />
+    <external-path
+        name="external_files"
+        path="." />
+
+    <root-path
+        name="root"
+        path="" />
+
+    <files-path
+        name="files_path"
+        path="." />
+
+    <cache-path
+        name="cache_path"
+        path="." />
+
+    <external-path
+        name="external_path"
+        path="." />
+
+    <external-files-path
+        name="external_files_path"
+        path="." />
+
+    <external-cache-path
+        name="external_cache_path"
+        path="." />
+
+    <external-path
+        name="images"
+        path="DCIM/IMAGE" />
+</paths>

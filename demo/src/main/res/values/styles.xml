@@ -1,0 +1,65 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.BaseAppTheme">
+        <!-- Customize your theme here. -->
+<!--        <item name="colorPrimary">#1B1E1E</item>-->
+<!--        <item name="colorPrimaryDark">#1B1E1E</item>-->
+<!--        <item name="colorAccent">@color/colorAccent</item>-->
+<!--        <item name="android:colorBackground">#1B1E1E</item>-->
+
+<!--        <item name="colorControlHighlight">@color/ripple_material_dark</item>-->
+        <!-- Toolbar风格 -->
+<!--        <item name="toolbarStyle">@style/Theme.Toolbar.App.Style</item>-->
+
+        <item name="colorBG">@color/colorPrimary</item>
+        <item name="colorPM">@android:color/white</item>
+        <item name="statusBarDark">true</item>
+        <item name="statusBarImmersion">true</item>
+
+<!--        <item name="colorAccent">@color/colorAccent</item>-->
+    </style>
+
+
+    <!--=============下面是toolbar相关主题============-->
+    <!-- Toolbar样式 -->
+    <style name="Theme.Toolbar.App.Style" parent="@style/Widget.AppCompat.Toolbar">
+        <item name="android:background">#33B5E5</item>
+        <!--注意不要用android:titleTextAppearance,要用xmlns:app="http://schemas.android.com/apk/res-auto"下的，
+                不带前缀就是app:下的-->
+        <!--主标题-->
+        <item name="title">title</item>
+        <!--副标题-->
+        <item name="subtitle">subtitle</item>
+
+        <!--logo-->
+        <item name="logo">@android:drawable/ic_menu_call</item>
+        <!--主标题样式-->
+        <item name="titleTextAppearance">@style/Theme.ToolBar.App.Title</item>
+        <!--副标题样式-->
+        <item name="subtitleTextAppearance">@style/Theme.ToolBar.App.Subtitle</item>
+
+        <item name="android:minHeight">?attr/actionBarSize</item>
+        <item name="titleMargins">4dp</item>
+        <!--ToolBar的Home图标左侧间隙-->
+        <item name="contentInsetStart">16dp</item>
+
+        <!--当home图标折叠时显示的图标-->
+        <item name="collapseIcon">@android:drawable/ic_menu_compass</item>
+        <item name="collapseContentDescription">collapseContentDescription</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+
+    </style>
+
+    <!--设置toolbar标题主题-->
+    <style name="Theme.ToolBar.App.Title" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <!--toolbar副标题主题-->
+    <style name="Theme.ToolBar.App.Subtitle" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Subtitle">
+        <item name="android:textSize">9sp</item>
+        <item name="android:textColor">#ff0000</item>
+    </style>
+</resources>

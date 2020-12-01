@@ -1,28 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/ll_container"
     android:layout_width="match_parent"
     android:layout_height="400dp"
     android:background="@drawable/round_white_corner_4"
     android:gravity="center_horizontal"
-    android:minWidth="260dip"
-    android:orientation="vertical">
+    android:minWidth="260dp"
+    android:orientation="vertical"
+    android:paddingTop="12dp">
 
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="12dp"
-        android:text="标题"
+        android:layout_marginTop="12dp"
+        android:text=""
         android:textColor="#2B3232"
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        tools:text="标题" />
 
     <FrameLayout
         android:id="@+id/fl_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
         android:layout_marginBottom="24dp">
 
         <TextView
@@ -32,9 +36,10 @@
             android:layout_gravity="center"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:text="对话框的内容"
+            android:text=""
             android:textColor="#4F5758"
-            android:textSize="15sp" />
+            android:textSize="15sp"
+            tools:text="对话框的内容" />
     </FrameLayout>
 
     <View
@@ -47,12 +52,12 @@
         android:layout_height="50dp"
         android:orientation="horizontal">
 
-        <FrameLayout
+        <com.xuqiqiang.uikit.view.TouchRipple
             android:id="@+id/bt_cancel"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:foreground="?attr/selectableItemBackground">
+            app:mrl_rippleRoundedCornersBottomLeft="4dp">
 
             <TextView
                 android:id="@+id/tv_cancel"
@@ -62,7 +67,7 @@
                 android:text="取消"
                 android:textColor="#4F5758"
                 android:textSize="15sp" />
-        </FrameLayout>
+        </com.xuqiqiang.uikit.view.TouchRipple>
 
         <View
             android:id="@+id/divider"
@@ -71,12 +76,12 @@
             android:layout_gravity="center_vertical"
             android:background="?attr/colorDivider" />
 
-        <FrameLayout
+        <com.xuqiqiang.uikit.view.TouchRipple
             android:id="@+id/bt_ok"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:foreground="?attr/selectableItemBackground">
+            app:mrl_rippleRoundedCornersBottomRight="4dp">
 
             <TextView
                 android:id="@+id/tv_ok"
@@ -86,6 +91,6 @@
                 android:text="确认"
                 android:textColor="?android:attr/textColorPrimary"
                 android:textSize="15sp" />
-        </FrameLayout>
+        </com.xuqiqiang.uikit.view.TouchRipple>
     </LinearLayout>
 </LinearLayout>

@@ -57,7 +57,8 @@ public class BaseDialog extends Dialog {
         return dialog;
     }
 
-    public static BaseDialog show(Context context, String title, String message, final OnDialogListener onPositive, final OnDialogListener onNegative) {
+    public static BaseDialog show(Context context, String title, String message,
+                                  final OnDialogListener onPositive, final OnDialogListener onNegative) {
         BaseDialog dialog = new BaseDialog.Builder(context)
                 .setTitle(title)
                 .setMessage(message)
@@ -110,6 +111,7 @@ public class BaseDialog extends Dialog {
         private int negativeButtonTextColor;
         private boolean cancelable = true;
         //        private boolean showClose = true;
+        private int dialogLayout = R.layout.dialog_base;
         private View contentView;
         private int contentLayout;
         private OnContentViewListener onContentViewListener;
@@ -165,6 +167,11 @@ public class BaseDialog extends Dialog {
          */
         public Builder setMessage(int message) {
             this.message = (String) context.getText(message);
+            return this;
+        }
+
+        public Builder setDialogView(int layoutId) {
+            this.dialogLayout = layoutId;
             return this;
         }
 
@@ -367,7 +374,7 @@ public class BaseDialog extends Dialog {
             dialog.setCancelable(cancelable);
             dialog.setCanceledOnTouchOutside(false);
 
-            layout = inflater.inflate(R.layout.dialog_base, null);
+            layout = inflater.inflate(dialogLayout, null);
             if (minWidth != 0)
                 layout.setMinimumWidth(minWidth);//(int) DisplayUtils.dip2px(context, 260));
 //            View btClose = layout.findViewById(R.id.bt_close);
@@ -376,13 +383,11 @@ public class BaseDialog extends Dialog {
 //            } else {
 //                btClose.setVisibility(View.GONE);
 //            }
-
+            TextView tvTitle = layout.findViewById(R.id.tv_title);
             if (!TextUtils.isEmpty(title)) {
-                TextView tvTitle = layout.findViewById(R.id.tv_title);
                 tvTitle.setText(title);
-//                if (!showClose) {
-//                    tvTitle.setGravity(Gravity.CENTER);
-//                }
+            } else {
+                tvTitle.setVisibility(View.GONE);
             }
 
             if (contentView != null || contentLayout != 0) {

@@ -16,6 +16,7 @@
             android:drawablePadding="10dp"
             android:gravity="center_vertical"
             android:text=""
+            android:textColor="@color/dark"
             android:textSize="17sp" />
 
         <View
@@ -23,6 +24,6 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_gravity="bottom"
-            android:background="?attr/colorDivider" />
+            android:background="@color/colorDivider" />
     </FrameLayout>
 </com.xuqiqiang.uikit.view.TouchRipple>

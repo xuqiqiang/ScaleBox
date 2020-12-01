@@ -25,7 +25,7 @@ import java.util.List;
 /**
  * Created by xuqiqiang on 2019/07/12.
  */
-public abstract class BaseActivityFragment extends Fragment {
+public abstract class BaseFragment extends Fragment {
     private final List<Runnable> mRunnablesAfterResume = new ArrayList<>();
     protected Context mContext;
     protected View rootView;

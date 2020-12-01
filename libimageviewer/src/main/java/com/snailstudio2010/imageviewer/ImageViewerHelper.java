@@ -1,7 +1,3 @@
-/*
- * Copyright (C) 2019 xuqiqiang. All rights reserved.
- * LiveEarth
- */
 package com.snailstudio2010.imageviewer;
 
 import android.app.Activity;
@@ -35,15 +31,16 @@ import indi.liyi.viewer.otherui.DefaultIndexUI;
 import static com.xuqiqiang.uikit.utils.DisplayUtils.attrData;
 
 /**
- * Created by xuqiqiang on 2019/08/19.
+ * Created by xuqiqiang on 2020/08/19.
  */
-public class ImageViewerHelper {
+public class ImageViewerHelper implements ImageViewerDelegate {
 
     private static final String TAG = ImageViewerHelper.class.getSimpleName();
-    private Activity mContext;
+    private final Activity mContext;
+    ImageInfo mImageInfo;
     private ImageViewer mImageViewer;
-    private ImageInfo mImageInfo;
     private boolean isImageShowing;
+    private boolean isBackgroundDark = true;
 
     public ImageViewerHelper(Activity activity) {
         this.mContext = activity;
@@ -94,15 +91,15 @@ public class ImageViewerHelper {
         }
     }
 
-    protected boolean isBackgroundDark() {
-        return true;
+    public void setBackgroundDark(boolean backgroundDark) {
+        isBackgroundDark = backgroundDark;
     }
 
-    private ImageViewer initImageViewer() {
+    protected ImageViewer initImageViewer() {
         ImageViewer imageViewer = new ImageViewer(mContext);
         // for test
         imageViewer.setBackgroundColor(attrData(mContext, android.R.attr.windowBackground));
-        if (!isBackgroundDark()) {
+        if (!isBackgroundDark) {
             imageViewer.loadIndexUI(new DefaultIndexUI(true) {
 
                 @Override
@@ -113,32 +110,20 @@ public class ImageViewerHelper {
                 }
             });
         }
-
-//        imageViewer.setOnItemLongPressListener(new OnItemLongPressListener() {
-//            @Override
-//            public boolean onItemLongPress(int position, ImageView imageView) {
-//                PopupMenu popupMenu = initImageMenu(mImageInfo.getList().get(position));
-//                if (popupMenu != null) {
-//                    popupMenu.show();
-//                }
-//                return true;
-//            }
-//        });
         return imageViewer;
     }
 
-//    public PopupMenu initImageMenu(ImageInfo.Info info) {
-//        return null;
-//    }
-
+    @Override
     public void showImage(Object src) {
         showImage(src, null);
     }
 
+    @Override
     public void showImage(Object src, View view) {
         showImage(src == null ? null : new Object[]{src}, 0, view);
     }
 
+    @Override
     public void showImage(final Object[] srcArray, final int index, final View view) {
         if (view == null) {
             showImages(initImageInfo(srcArray, index, null));
@@ -195,10 +180,12 @@ public class ImageViewerHelper {
         return imageInfo;
     }
 
+    @Override
     public void showImagesByDialog(ImageInfo imageInfo) {
         showImagesByDialog(imageInfo, null, null);
     }
 
+    @Override
     public void showImagesByDialog(ImageInfo imageInfo, final Runnable onShow, final Runnable onHide) {
         mImageInfo = imageInfo;
 
@@ -246,14 +233,17 @@ public class ImageViewerHelper {
         });
     }
 
+    @Override
     public void showImageByDialog(Object src) {
         showImageByDialog(src, null);
     }
 
+    @Override
     public void showImageByDialog(Object src, View view) {
         showImageByDialog(src == null ? null : new Object[]{src}, 0, view);
     }
 
+    @Override
     public void showImageByDialog(final Object[] srcArray, final int index, final View view) {
         if (view == null) {
             showImagesByDialog(initImageInfo(srcArray, index, null));

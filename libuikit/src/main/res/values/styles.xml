@@ -43,7 +43,7 @@
         <!-- 自定义attr end -->
 
         <!--应用的主要色调,actionBar默认使用该颜色,Toolbar导航栏的底色-->
-        <item name="colorPrimary">?attr/colorPM</item>
+        <item name="colorPrimary">?attr/colorBG</item>
         <!--状态栏和底部导航栏背景颜色-->
         <item name="colorPrimaryDark">?attr/colorBG</item>
         <!--页面背景色-->

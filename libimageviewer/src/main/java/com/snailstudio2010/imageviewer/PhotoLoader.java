@@ -42,7 +42,7 @@ public class PhotoLoader extends ImageLoader {
                     callback.onLoadStarted(mCachedBitmap);
                     mCachedBitmap = null;
                     final long start = System.currentTimeMillis();
-                    RxImageUtils.loadBitmap(imageView.getContext(), src, 200, 200, new RxImageUtils.LoadBitmapListener() {
+                    ImageUtils.loadBitmap(imageView.getContext(), src, 200, 200, new ImageUtils.LoadBitmapListener() {
                         @Override
                         public void onLoad(Bitmap bitmap) {
                             if (!hasLoadBitmap) {
@@ -53,7 +53,7 @@ public class PhotoLoader extends ImageLoader {
                     });
                 } else {
                     callback.onLoadStarted(getPlaceholder(imageView.getContext()));
-                    RxImageUtils.loadBitmap(imageView.getContext(), src, 200, 200, new RxImageUtils.LoadBitmapListener() {
+                    ImageUtils.loadBitmap(imageView.getContext(), src, 200, 200, new ImageUtils.LoadBitmapListener() {
                         @Override
                         public void onLoad(Bitmap bitmap) {
                             if (!hasLoadBitmap) {
@@ -64,12 +64,12 @@ public class PhotoLoader extends ImageLoader {
                 }
             }
         } else if (state == 1) {
-            RxImageUtils.loadBitmap(imageView.getContext(), src, 200, 200, new RxImageUtils.LoadBitmapListener() {
+            ImageUtils.loadBitmap(imageView.getContext(), src, 200, 200, new ImageUtils.LoadBitmapListener() {
                 @Override
                 public void onLoad(Bitmap bitmap) {
                     if (callback == null || !callback.onLoadSucceed(bitmap)) {
 //                            Logger.d("src:" + src);
-//                            RxImageUtils.loadImage(imageView.getContext(), (String) src, imageView);
+//                            ImageUtils.loadImage(imageView.getContext(), (String) src, imageView);
                         imageView.setImageBitmap(bitmap);
                     }
 
@@ -78,7 +78,7 @@ public class PhotoLoader extends ImageLoader {
             return;
         }
 
-        RxImageUtils.loadBitmap(imageView.getContext(), src, BitmapUtils.getMaxBitmapSize(), new RxImageUtils.LoadBitmapListener() {
+        ImageUtils.loadBitmap(imageView.getContext(), src, BitmapUtils.getMaxBitmapSize(), new ImageUtils.LoadBitmapListener() {
             @Override
             public void onLoad(Bitmap bitmap) {
                 hasLoadBitmap = true;

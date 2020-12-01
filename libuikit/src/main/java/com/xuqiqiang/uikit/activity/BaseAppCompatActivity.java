@@ -92,6 +92,15 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity {
         return false;
     }
 
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (hasFocus && isFullScreen()) {
+            ViewUtils.fullScreenImmersive(getWindow());
+        }
+    }
+
     @Override
     protected void onStart() {
         //Fix: java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Object[]

@@ -6,6 +6,8 @@ import android.graphics.BitmapFactory;
 import android.util.Log;
 import android.widget.ImageView;
 
+import com.xuqiqiang.uikit.utils.BitmapUtils;
+
 import indi.liyi.viewer.ImageLoader;
 import indi.liyi.viewer.R;
 
@@ -76,7 +78,7 @@ public class PhotoLoader extends ImageLoader {
             return;
         }
 
-        RxImageUtils.loadBitmap(imageView.getContext(), src, new RxImageUtils.LoadBitmapListener() {
+        RxImageUtils.loadBitmap(imageView.getContext(), src, BitmapUtils.getMaxBitmapSize(), new RxImageUtils.LoadBitmapListener() {
             @Override
             public void onLoad(Bitmap bitmap) {
                 hasLoadBitmap = true;
@@ -91,6 +93,5 @@ public class PhotoLoader extends ImageLoader {
                 }
             }
         });
-        return;
     }
 }

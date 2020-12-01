@@ -1,13 +1,9 @@
 package com.xuqiqiang.scalebox.demo.view.activity;
 
-import android.animation.ObjectAnimator;
-import android.animation.PropertyValuesHolder;
-import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 
@@ -30,9 +26,9 @@ import com.xuqiqiang.scalebox.demo.model.entity.PhotoEntity;
 import com.xuqiqiang.scalebox.demo.model.entity.PhotoWrapper;
 import com.xuqiqiang.scalebox.demo.utils.FrescoImageLoader;
 import com.xuqiqiang.scalebox.demo.view.adapter.GalleryAdapter;
+import com.xuqiqiang.scalebox.demo.view.component.FastScrollerHelper;
 import com.xuqiqiang.scalebox.demo.view.component.PhotoViewer;
 import com.xuqiqiang.scalebox.utils.Logger;
-import com.xuqiqiang.scalebox.utils.Utils;
 import com.xuqiqiang.uikit.activity.BaseThemeActivity;
 import com.xuqiqiang.uikit.utils.PermissionUtils;
 import com.xuqiqiang.uikit.utils.ScreenUtils;
@@ -90,24 +86,9 @@ public class AlbumActivity extends BaseThemeActivity {
     private GalleryAdapter mGalleryAdapter;
     private RecyclerView rvAlbums;
     private VerticalRecyclerViewFastScroller mFastScroller;
-    private ObjectAnimator mAnimatorHideScroller;
-    private final Runnable mRunnableHideScroller = new Runnable() {
-        @Override
-        public void run() {
-            if (mAnimatorHideScroller != null)
-                mAnimatorHideScroller.cancel();
-            mAnimatorHideScroller = ObjectAnimator.ofPropertyValuesHolder(mFastScroller,
-                    PropertyValuesHolder.ofFloat("alpha", 0),
-                    PropertyValuesHolder.ofFloat("translationX",
-                            Utils.dip2px(AlbumActivity.this, 20))
-            ).setDuration(300);
-            mAnimatorHideScroller.start();
-        }
-    };
-    private RecyclerView mLastScrollerRecyclerView;
+    private FastScrollerHelper mFastScrollerHelper;
     private PhotoViewer mPhotoViewer;
 
-    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -192,11 +173,11 @@ public class AlbumActivity extends BaseThemeActivity {
                         Fresco.getImagePipeline().pause();
                     }
                 }
-                if (newState == RecyclerView.SCROLL_STATE_IDLE) {
-                    hideFastScroller();
-                } else if (newState == RecyclerView.SCROLL_STATE_DRAGGING) {
-                    showFastScroller();
-                }
+//                if (newState == RecyclerView.SCROLL_STATE_IDLE) {
+//                    mFastScrollerHelper.hideFastScroller();
+//                } else if (newState == RecyclerView.SCROLL_STATE_DRAGGING) {
+//                    mFastScrollerHelper.showFastScroller();
+//                }
 //                if (newState == RecyclerView.SCROLL_STATE_IDLE && level == mGalleryAdapter.getLevel()) {
 //                    updateDate(level);
 //                }
@@ -213,54 +194,15 @@ public class AlbumActivity extends BaseThemeActivity {
             @Override
             public void onScaleChanged(int level) {
                 updateDate(level);
-                if (mLastScrollerRecyclerView != null)
-                    mLastScrollerRecyclerView.removeOnScrollListener(mFastScroller.getOnScrollListener());
-                RecyclerView recyclerView = mGalleryAdapter.getRecyclerView(level);
-                mFastScroller.setRecyclerView(recyclerView);
-                recyclerView.addOnScrollListener(mFastScroller.getOnScrollListener());
-
+                mFastScrollerHelper.bindRecyclerView(mGalleryAdapter.getRecyclerView(level));
             }
         });
         mLoadingView.showLoading("正在加载中～");
 
         RecyclerView recyclerView = mGalleryAdapter.getRecyclerView(1);
         mFastScroller = findViewById(R.id.fast_scroller);
-        mFastScroller.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    showFastScroller();
-                } else if (event.getAction() == MotionEvent.ACTION_UP
-                        || event.getAction() == MotionEvent.ACTION_CANCEL) {
-                    hideFastScroller();
-                }
-                event.setLocation(event.getX(), event.getY()
-                        - Utils.dip2px(AlbumActivity.this, 25));
-                float scrollProgress = mFastScroller.getScrollProgress(event);
-                mFastScroller.scrollTo(scrollProgress, true);
-                mFastScroller.moveHandleToPosition(scrollProgress);
-                return true;
-            }
-        });
-        // Connect the recycler to the scroller (to let the scroller scroll the list)
-        mFastScroller.setRecyclerView(recyclerView);
-        // Connect the scroller to the recycler (to let the recycler scroll the scroller's handle)
-        recyclerView.addOnScrollListener(mFastScroller.getOnScrollListener());
-        mLastScrollerRecyclerView = recyclerView;
-    }
-
-    private void showFastScroller() {
-        if (mAnimatorHideScroller != null && mAnimatorHideScroller.isRunning())
-            mAnimatorHideScroller.cancel();
-        mHandler.removeCallbacks(mRunnableHideScroller);
-        if (mFastScroller.getTranslationX() > 0) {
-            mFastScroller.setTranslationX(0);
-            mFastScroller.setAlpha(1f);
-        }
-    }
-
-    private void hideFastScroller() {
-        mHandler.postDelayed(mRunnableHideScroller, 2000);
+        mFastScrollerHelper = new FastScrollerHelper(mFastScroller);
+        mFastScrollerHelper.bindRecyclerView(recyclerView);
     }
 
     private void updateDate(int level) {

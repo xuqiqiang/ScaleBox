@@ -9,3 +9,7 @@
 [Demo app](https://www.pgyer.com/I49u)
 
 ![qrcode](https://www.pgyer.com/app/qrcode/I49u)
+
+## License
+
+[Apache License](https://github.com/xuqiqiang/ScaleBox/blob/main/LICENSE)

@@ -137,6 +137,12 @@ public abstract class ScaleBoxAdapter {
         }
     }
 
+    public void addOnScrollListener(@NonNull RecyclerView.OnScrollListener listener) {
+        for (RecyclerView rvPhoto : rvPhotos) {
+            rvPhoto.addOnScrollListener(listener);
+        }
+    }
+
     public void setOnScaleListener(OnScaleListener listener) {
         this.mOnScaleListener = listener;
     }

@@ -12,12 +12,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
-import com.xuqiqiang.uikit.utils.ArrayUtils;
 import com.xuqiqiang.scalebox.GalleryBoxAdapter;
 import com.xuqiqiang.scalebox.demo.R;
 import com.xuqiqiang.scalebox.demo.model.entity.PhotoEntity;
 import com.xuqiqiang.scalebox.demo.model.entity.PhotoWrapper;
-import com.xuqiqiang.scalebox.demo.view.component.PhotoViewer;
+import com.xuqiqiang.scalebox.demo.view.component.GalleryPhotoViewer;
+import com.xuqiqiang.uikit.utils.ArrayUtils;
 import com.xuqiqiang.uikit.utils.IntentUtils;
 
 import java.io.File;
@@ -26,7 +26,7 @@ import java.util.List;
 public class GalleryAdapter extends GalleryBoxAdapter<PhotoEntity, PhotoWrapper> {
 
     private int[] mSpanCounts;
-    private PhotoViewer mPhotoViewer;
+    private GalleryPhotoViewer mPhotoViewer;
 
     public GalleryAdapter(Context context, List<PhotoEntity> photoList) {
         super(context, photoList);
@@ -45,10 +45,10 @@ public class GalleryAdapter extends GalleryBoxAdapter<PhotoEntity, PhotoWrapper>
                 toPreviewIndex(getLevel(), position), R.id.iv_photo);
     }
 
-    public void setPhotoViewer(PhotoViewer photoViewer) {
+    public void setPhotoViewer(GalleryPhotoViewer photoViewer) {
         this.mPhotoViewer = photoViewer;
 
-        mPhotoViewer.setOnItemChangedListener(new PhotoViewer.OnItemChangedListener() {
+        mPhotoViewer.setOnItemChangedListener(new GalleryPhotoViewer.OnItemChangedListener() {
             @Override
             public View onItemChanged(int position) {
                 return getPhotoPreviewView(position

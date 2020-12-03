@@ -2,6 +2,7 @@ package com.xuqiqiang.scalebox.demo.model.entity;
 
 import android.text.TextUtils;
 
+import com.snailstudio2010.imageviewer.IPhotoEntity;
 import com.xuqiqiang.scalebox.GalleryBoxAdapter;
 import com.xuqiqiang.uikit.utils.TimeUtils;
 import com.xuqiqiang.uikit.utils.MimeUtils;
@@ -13,7 +14,7 @@ import java.io.Serializable;
 /**
  * Created by xuqiqiang on 2020/08/27.
  */
-public class PhotoEntity implements Serializable, GalleryBoxAdapter.IPhotoEntity {
+public class PhotoEntity implements Serializable, IPhotoEntity, GalleryBoxAdapter.IPhotoEntity {
 
     public static final int TYPE_IMAGE = 0, TYPE_VIDEO = 1;
     private static final long serialVersionUID = 1L;
@@ -26,6 +27,7 @@ public class PhotoEntity implements Serializable, GalleryBoxAdapter.IPhotoEntity
             this.createTime = new File(filePath).lastModified();
     }
 
+    @Override
     public String getFilePath() {
         return filePath;
     }
@@ -38,6 +40,7 @@ public class PhotoEntity implements Serializable, GalleryBoxAdapter.IPhotoEntity
         return createTime;
     }
 
+    @Override
     public int getType() {
         int type = TYPE_IMAGE;
         String mimeType = MimeUtils.getUrlMIMEType(filePath);

@@ -27,7 +27,7 @@ import com.xuqiqiang.scalebox.demo.model.entity.PhotoWrapper;
 import com.xuqiqiang.scalebox.demo.utils.FrescoImageLoader;
 import com.xuqiqiang.scalebox.demo.view.adapter.GalleryAdapter;
 import com.xuqiqiang.scalebox.demo.view.component.FastScrollerHelper;
-import com.xuqiqiang.scalebox.demo.view.component.PhotoViewer;
+import com.xuqiqiang.scalebox.demo.view.component.GalleryPhotoViewer;
 import com.xuqiqiang.scalebox.utils.Logger;
 import com.xuqiqiang.uikit.activity.BaseThemeActivity;
 import com.xuqiqiang.uikit.utils.PermissionUtils;
@@ -87,7 +87,7 @@ public class AlbumActivity extends BaseThemeActivity {
     private RecyclerView rvAlbums;
     private VerticalRecyclerViewFastScroller mFastScroller;
     private FastScrollerHelper mFastScrollerHelper;
-    private PhotoViewer mPhotoViewer;
+    private GalleryPhotoViewer mPhotoViewer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
